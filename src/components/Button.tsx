@@ -1,5 +1,3 @@
-import style from 'styled-jsx/style';
-
 type IButtonProps = {
   children: string,
   className?: string,
