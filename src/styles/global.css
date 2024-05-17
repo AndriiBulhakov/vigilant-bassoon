@@ -1,0 +1,291 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: Albra;
+  src: url('/fonts/Albra-Regular.otf') format('opentype');
+}
+
+body{
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+
+
+/* Navbar */
+
+.navbar-logo{
+  width: 11.8125rem;
+  height: 1.75rem;
+}
+
+/* Bubles */
+
+.bubbles-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubbles-wrapper.is--absolute{
+  position: absolute;
+}
+
+.blur-overlay{
+  background: rgba(238, 234, 228, 0.01);
+  backdrop-filter: blur(87px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.bubble{
+  position: absolute;
+}
+
+.bubble.is--red{
+  border-radius: 67.3125rem;
+  background: #FF4800;
+  width: 74.792%;
+  height: 56.353%;
+  transform: rotate(42.194deg);
+  bottom: -27.294%;
+  left: -31.181%; 
+}
+
+.bubble.is--yellow{
+  border-radius: 30.375rem;
+  background: #FFC046;
+  width: 17.431%;
+  height: 57.176%;
+  transform: rotate(30deg);
+  bottom: -28.706%;
+  left: 26.319%;
+}
+
+.bubble.is--violet{
+  border-radius: 29.4375rem;
+  background: #FF8DFA;
+  width: 32.708%;
+  height: 26.471%;
+  transform: rotate(-56.943deg);
+  top: 30%;
+  right: -10.295%;
+}
+
+/* animation to moving bubbles */
+
+.bubble.is--red{
+  animation: move-bubble-red 6s infinite;
+  animation-delay: 1s;
+}
+
+.bubble.is--yellow{
+  animation: move-bubble-yellow 10s infinite;
+  animation-delay: 3s;
+}
+
+.bubble.is--violet{
+  animation: move-bubble-violet 6s infinite;
+  animation-delay: 5s;
+}
+
+@keyframes move-bubble-red {
+  0% {
+    transform: rotate(42.194deg);
+  }
+  50% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(42.194deg);
+  }
+}
+
+@keyframes move-bubble-yellow {
+  0% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  50% {
+    transform: translate(23.611vw, -7.059vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0vw, 0vh) rotate(0deg);
+  }
+}
+
+@keyframes move-bubble-violet {
+  0% {
+    transform: translate(0vw, 0vh) rotate(-56.943deg);
+  }
+  50% {
+    transform: translate(-6.823vw, -8.236vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0vw, 0vh) rotate(-56.943deg);
+  }
+}
+
+/* Bubbles in tab */
+
+
+
+/* Texts */
+.text-headlines\/h1, .text-headlines\/h2, .text-headlines\/h3{
+  font-family: Albra, sans-serif;
+  font-weight: 400;
+}
+
+.text-headlines\/h1{
+  line-height: 100%;
+  letter-spacing: -2%;
+  font-family: Albra, sans-serif;
+  font-weight: 400;
+}
+
+.text-headlines\/h2, .text-headlines\/h3{
+  line-height: 110%;
+  font-family: Albra, sans-serif;
+  font-weight: 400;
+}
+
+.text-body\/extra-large{
+  line-height: 100%;
+  letter-spacing: -0.0325rem;
+}
+
+.text-body\/large{
+  line-height: 131%;
+  letter-spacing: -0.0225rem;
+}
+
+.text-body\/medium{
+  line-height: 134%;
+  letter-spacing: -0.02rem;
+}
+
+.text-body\/small{
+  line-height: 100%;
+  letter-spacing: -0.00875rem;
+}
+
+/* Navigation */
+
+nav.nav-scroll{
+  background: rgba(255, 255, 255, 0.40);
+  backdrop-filter: blur(50px);
+}
+
+/* Slider */
+.embla {
+  overflow: hidden;
+  width: 100vw;
+}
+.embla__container {
+  display: flex;
+   white-space: nowrap;
+}
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Workflow */
+.workflow-wrapper{
+  text-align: center;
+  max-width: 79.72rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.workflow-wrapper ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workflow-wrapper ul li:first-child{
+  margin-bottom: 3rem;
+}
+
+.workflow-wrapper ul li:not(:first-child){
+  margin-bottom: 0.25rem;
+}
+
+.workflow-wrapper ul li:last-child{
+  margin-bottom: 0rem;
+}
+
+.workflow-badge{
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background: #FFF;
+}
+
+/* horizontal tab */
+
+.horizontal-tab{
+  height: calc(100svh - 2.5rem);
+  border-radius: 2rem;
+}
+
+/* Mentions */
+.mentions-wrapper{
+  background: url("/assets/images/mentions-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Footer */
+.footer-logo{
+  width: 18.6875rem;
+  height: 2.75rem;
+}
+
+footer li{
+  color: #1C1D20;
+  opacity: 0.5;
+}
+
+footer ul li:first-child{
+  opacity: 1;
+  margin-bottom: 0.5rem;
+}
+
+.footer-icon-list a{
+  transition: transform 0.3s;
+}
+
+.footer-icon-list a:nth-child(1){
+  transform: rotate(15deg);
+}
+
+.footer-icon-list a:nth-child(2){
+  transform: rotate(-15deg);
+}
+
+.footer-icon-list a:nth-child(3){
+  transform: rotate(-30deg);
+}
+
+.footer-icon-list a:nth-child(4){
+  transform: rotate(30deg);
+}
+
+.footer-icon-list a:hover{
+  transform: scale(0.95) rotate(0deg);
+}
